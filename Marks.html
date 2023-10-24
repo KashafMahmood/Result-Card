@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Grading</title>
+</head>
+<body>
+<table border ="10" height="300" width="400" align ="center" background-color="red">
+<form>
+<h1 align="center">Form</h1>
+<tr>
+<td><label>Name</label></td>
+<td><input type="text" id="n" /></td>
+</tr>
+<tr>
+<td><label>Roll No</label></td>
+<td><input type="text" id="fn" /></td>
+</tr>
+<tr>
+<td><label>Computer</label></td>
+<td><input type ="text" id="mm"  /></td>
+</tr>
+<tr>
+<td><label>Science</label></td>
+<td><input type ="text" id="em"  /></td>
+</tr>
+<tr>
+<td><label>English</label></td>
+<td><input type ="text" id="um"  /></td>
+</tr>
+<tr>
+<td><label>Mathematics</label></td>
+<td><input type ="text" id="cm"  /></td>
+</tr>
+<tr>
+<td colspan="2"><input  type="button" value="Submit" onclick="Check()" /></td>
+</tr>
+</form>
+</table>
+<h4 id="display1"></h4>
+<h4 id="display2"></h4>
+<h4 id="display3"></h4>
+<h4 id="display4"></h4>
+<h4 id="display5"></h4>
+<script>
+function Check()
+{
+var name = document.getElementById("n").value;
+var roll = document.getElementById("fn").value;
+var Computer = document.getElementById("mm").value;
+var Science = document.getElementById("em").value;
+var English  = document.getElementById("um").value;
+var Maths = document.getElementById("cm").value;
+var d1 = document.getElementById("display1");
+var d2 = document.getElementById("display2");
+var d3 = document.getElementById("display3");
+var d4 = document.getElementById("display4");
+var d5 = document.getElementById("display5");
+
+
+var obtained = parseInt(Computer) +parseInt(Science) +parseInt(English) +parseInt(Maths);
+var percentage = obtained * 100 / 400;
+d1 . innerHTML ="Your Name is:"+ name;
+d2 . innerHTML ="Your Roll  No:"+ roll;
+d3 . innerHTML ="Your obtained marks are:"+ obtained;
+d4 . innerHTML ="Your percentage is:"+ percentage;
+
+if(percentage >=80)
+{
+d5.innerHTML = "Grade: A";
+}
+else if(percentage >=70)
+{
+d5.innerHTML ="Grade: B";
+}
+else if(percentage >=60)
+{
+d5.innerHTML ="Grade: C";
+}
+else if(percentage >=50)
+{
+d5.innerHTML ="Grade: D";
+}
+else
+{
+d5.innerHTML ="Grade: F";
+}
+}
+</script>
+</body>
+</html>
